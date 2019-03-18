@@ -30,7 +30,7 @@
 }
 #AllImages{
 	display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 80px;
     max-width: 1366px;
     margin: 0 auto 30px;
@@ -50,4 +50,34 @@
 		object-fit: cover;
 		height: 100%;
 	}
+}
+
+@media screen and (max-width: 768px){
+	#AllImages{
+		grid-template-columns: repeat(2,1fr);
+		grid-gap: 30px;
+	}
+}
+@media screen and (max-width: 600px){
+	#AllImages{
+		grid-template-columns: repeat(1,1fr);
+	
+	}
+	.content {
+		.name{
+			font-size: 16px;
+		}
+		.age{
+			font-size: 14px;
+		}
+		.email{
+			font-size: 14px;
+		}
+	}
+	.text-animal {
+		h1{
+			font-size: 20px;
+		}
+	}
+	
 }
