@@ -1,0 +1,44 @@
+.content {
+  display: table;
+  margin: 0 auto;
+  background: #ffc0cb26;
+  padding: 39px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  text-align: center; }
+  .content .name {
+    color: red;
+    text-transform: uppercase;
+    font-size: 40px; }
+  .content .age {
+    font-size: 28px; }
+  .content .email {
+    font-size: 24px; }
+
+.text-animal h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #009688;
+  text-decoration: underline; }
+
+#AllImages {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 80px;
+  max-width: 1366px;
+  margin: 0 auto 30px;
+  overflow: hidden; }
+
+.ImageLazyLoad {
+  width: 100%;
+  height: 30vh;
+  display: inline-block;
+  text-align: center;
+  position: relative; }
+  .ImageLazyLoad img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    /* top: 0; */
+    object-fit: cover;
+    height: 100%; }
