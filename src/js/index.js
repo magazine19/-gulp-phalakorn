@@ -27,14 +27,32 @@ let observer = new IntersectionObserver(function (entries) {
   });
 }, config);
 
+
+// document.addEventListener("DOMContentLoaded", function (e) {
+//   let images = document.getElementsByClassName('ImageLazyLoad');
+//  // console.log(images);
+
+//   Array.from(images).forEach(image => {
+//     observer.observe(image);
+//   });
+// });
+
+class ImageLazyLoad {
+
+  startLoadImageFromClass(ImageClass) {
+  
+      let images = document.getElementsByClassName(ImageClass);
+     // console.log(images);
+    
+      Array.from(images).forEach(image => {
+        observer.observe(image);
+      });
+  
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function (e) {
-  let images = document.getElementsByClassName('ImageLazyLoad');
- // console.log(images);
-
-  Array.from(images).forEach(image => {
-    observer.observe(image);
-  });
+  const loadImage = new ImageLazyLoad();
+  loadImage.startLoadImageFromClass('ImageLazyLoad');
 });
-
-
 

@@ -1,5 +1,11 @@
 "use strict";
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 var config = {
   root: document.querySelector('#AllImages'),
   // avoiding 'root' or setting it to 'null' sets it to default value: viewport
@@ -26,11 +32,36 @@ var observer = new IntersectionObserver(function (entries) {
       isLeaving = false; // Do something with exiting entry
     }
   });
-}, config);
-document.addEventListener("DOMContentLoaded", function (e) {
-  var images = document.getElementsByClassName('ImageLazyLoad'); // console.log(images);
+}, config); // document.addEventListener("DOMContentLoaded", function (e) {
+//   let images = document.getElementsByClassName('ImageLazyLoad');
+//  // console.log(images);
+//   Array.from(images).forEach(image => {
+//     observer.observe(image);
+//   });
+// });
 
-  Array.from(images).forEach(function (image) {
-    observer.observe(image);
-  });
+var ImageLazyLoad =
+/*#__PURE__*/
+function () {
+  function ImageLazyLoad() {
+    _classCallCheck(this, ImageLazyLoad);
+  }
+
+  _createClass(ImageLazyLoad, [{
+    key: "startLoadImageFromClass",
+    value: function startLoadImageFromClass(ImageClass) {
+      var images = document.getElementsByClassName(ImageClass); // console.log(images);
+
+      Array.from(images).forEach(function (image) {
+        observer.observe(image);
+      });
+    }
+  }]);
+
+  return ImageLazyLoad;
+}();
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  var loadImage = new ImageLazyLoad();
+  loadImage.startLoadImageFromClass('ImageLazyLoad');
 });

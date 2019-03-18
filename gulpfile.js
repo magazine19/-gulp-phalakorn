@@ -1,7 +1,7 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const browserSync = require('browser-sync').create()
-const webserver = require('gulp-webserver')
+//const webserver = require('gulp-webserver')
 const babel = require('gulp-babel')
 
 gulp.task('sass', function(){
@@ -74,13 +74,13 @@ gulp.task('default', ['sass','script'], function () {
 })
 
 
-gulp.task('webserver', function () {
-   gulp.src('dist')
-    .pipe(webserver({
-      livereload: true,
-      open: true
-    }))
-})
+// gulp.task('webserver', function () {
+//    gulp.src('dist')
+//     .pipe(webserver({
+//       livereload: true,
+//       open: true
+//     }))
+// })
 
 gulp.task('build', ['sass','script'], function () {
   process.exit()
