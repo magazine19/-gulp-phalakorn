@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+  margin: 0; }
+
 .content {
   display: table;
   margin: 0 auto;
@@ -31,7 +35,7 @@
 
 .ImageLazyLoad {
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   display: inline-block;
   text-align: center;
   position: relative; }
@@ -42,6 +46,50 @@
     /* top: 0; */
     object-fit: cover;
     height: 100%; }
+
+.block_slide {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative; }
+  .block_slide .slide {
+    display: flex;
+    overflow: hidden;
+    transition: all 300ms ease 0s; }
+    .block_slide .slide .item {
+      max-width: 90%;
+      padding: 0 20px;
+      position: relative; }
+      .block_slide .slide .item img {
+        height: 80vh; }
+  .block_slide .buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.568627);
+    margin: 0 auto;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+    display: none; }
+    .block_slide .buttons .block-buttons {
+      display: flex; }
+      .block_slide .buttons .block-buttons a {
+        text-transform: uppercase;
+        background: white;
+        width: 95px;
+        height: 93px;
+        display: inline-block;
+        /* padding: 32px 20px; */
+        border-radius: 78px;
+        border: 1px solid black;
+        margin: 0 25px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
 
 @media screen and (max-width: 768px) {
   #AllImages {
